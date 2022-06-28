@@ -61,7 +61,7 @@ const ourTeam = [
 
 const main = document.querySelector('main');
 
-const wrapper = elementCreation();
+const wrapper = elementCreation('div');
 wrapper.classList.add('wrapper');
 
 main.append(wrapper);
@@ -77,16 +77,20 @@ for (let i = 0; i < ourTeam.length; i++) {
 ruolo = ${ourTeam[i].role},
 foto = ${ourTeam[i].photo}`);
 
-const domElements = elementCreation();
-domElements.innerHTML = `Nome: ${ourTeam[i].name} - Ruolo: ${ourTeam[i].role} - Foto: ${ourTeam[i].photo}`
+const domElements = elementCreation('div');
+const teamPhotos = elementCreation('img');
+teamPhotos.setAttribute('src', './img/' + ourTeam[i].photo);
+
+domElements.innerText += `Nome: ${ourTeam[i].name} - Ruolo: ${ourTeam[i].role} - Foto: ${ourTeam[i].photo}`;
 
 wrapper.append(domElements);
+domElements.append(teamPhotos);
 
 }
 
 
-function elementCreation() {
-    return document.createElement('div');
+function elementCreation(elementToCreate) {
+    return document.createElement(elementToCreate);
 }
 
 // ! cosetta inutile
