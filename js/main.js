@@ -60,10 +60,17 @@ const ourTeam = [
 // creo gli elementi del dom
 
 const main = document.querySelector('main');
+const wrapper = elementCreation('div', 'container');
+const row = elementCreation('div', 'row');
+row.classList.add('mb-5')
+row.classList.add('col-10','offset-1', 'justify-content-center');
 
-const wrapper = elementCreation('div', 'wrapper');
+const headtitle = elementCreation('h1', 'text-center');
+headtitle.classList.add('py-3', 'text-danger');
+headtitle.innerHTML = 'Meet our Team!';
 
 main.append(wrapper);
+wrapper.append(headtitle, row);
 
 // Stampare su console le informazioni di nome, ruolo e la stringa della foto
 // creiamo un for, essendo tanti, non un for in
@@ -72,14 +79,20 @@ for (let i = 0; i < ourTeam.length; i++) {
 const domElements = elementCreation('div', 'card');
 
 const teamPhotos = elementCreation('img', 'card-img-top');
+const cardBody = elementCreation('div', 'card-body');
+const cardInfo = elementCreation('p', 'card-text');
+cardInfo.innerHTML = `<div>Nome: ${ourTeam[i].name}</div> <div>Ruolo: ${ourTeam[i].role}</div>`;
+
+domElements.classList.add('m-1');
+
 
 teamPhotos.setAttribute('src', './img/' + ourTeam[i].photo);
 teamPhotos.setAttribute('alt', ourTeam[i].photo);
 
-// domElements.innerText += `Nome: ${ourTeam[i].name} - Ruolo: ${ourTeam[i].role}`;
-
-wrapper.append(domElements);
+row.append(domElements);
 domElements.append(teamPhotos);
+domElements.append(cardBody);
+cardBody.append(cardInfo);
 
 }
 
