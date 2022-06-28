@@ -55,22 +55,41 @@ const ourTeam = [
     },
 ];
 
+// MILESTONE 2:
+// Stampare le stesse informazioni su DOM sottoforma di stringhe
+// creo gli elementi del dom
+
+const main = document.querySelector('main');
+
+const wrapper = elementCreation();
+wrapper.classList.add('wrapper');
+
+main.append(wrapper);
+
 
 
 // Stampare su console le informazioni di nome, ruolo e la stringa della foto
 // creiamo un for, essendo tanti, non un for in
-
 for (let i = 0; i < ourTeam.length; i++) {
 
     console.log(
-`nome = ${ourTeam[i].name},
+        `nome = ${ourTeam[i].name},
 ruolo = ${ourTeam[i].role},
 foto = ${ourTeam[i].photo}`);
+
+const domElements = elementCreation();
+domElements.innerHTML = `Nome: ${ourTeam[i].name} - Ruolo: ${ourTeam[i].role} - Foto: ${ourTeam[i].photo}`
+
+wrapper.append(domElements);
 
 }
 
 
-// ! cosetta inutile 
+function elementCreation() {
+    return document.createElement('div');
+}
+
+// ! cosetta inutile
 // for (let i = 0; i < ourTeam.length; i++) {
 
     // volessimo per qualche motivo estrarre una ad una le informazioni, anche delle key
