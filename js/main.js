@@ -24,34 +24,48 @@
 
 const ourTeam = [
     {
-        name : 'Wayne Barnett',
-        role : 'Founder & CEO',
-        photo : 'wayne-barnett-founder-ceo.jpg',
+        name: 'Wayne Barnett',
+        role: 'Founder & CEO',
+        photo: 'wayne-barnett-founder-ceo.jpg',
     },
     {
-        name : 'Angela Caroll',
-        role : 'Chief Editor',
-        photo : 'angela-caroll-chief-editor.jpg',
+        name: 'Angela Caroll',
+        role: 'Chief Editor',
+        photo: 'angela-caroll-chief-editor.jpg',
     },
     {
-        name : 'Walter Gordon',
-        role : 'Office Manager',
-        photo : 'walter-gordon-office-manager.jpg',
+        name: 'Walter Gordon',
+        role: 'Office Manager',
+        photo: 'walter-gordon-office-manager.jpg',
     },
     {
-        name : 'Angela Lopez',
-        role : 'Social Media Manager',
-        photo : 'angela-lopez-social-media-manager.jpg',
+        name: 'Angela Lopez',
+        role: 'Social Media Manager',
+        photo: 'angela-lopez-social-media-manager.jpg',
     },
     {
-        name : 'Scott Estrada',
-        role : 'Developer',
-        photo : 'scott-estrada-developer.jpg',
+        name: 'Scott Estrada',
+        role: 'Developer',
+        photo: 'scott-estrada-developer.jpg',
     },
     {
-        name : 'Barbara Ramos',
-        role : 'Graphic Designer',
-        photo : 'barbara-ramos-graphic-designer.jpg',
-    },   
-]
+        name: 'Barbara Ramos',
+        role: 'Graphic Designer',
+        photo: 'barbara-ramos-graphic-designer.jpg',
+    },
+];
 
+
+
+// Stampare su console le informazioni di nome, ruolo e la stringa della foto
+// creiamo un for, essendo tanti, non un for in
+
+for (let i = 0; i < ourTeam.length; i++) {
+
+    // stampiamo in console i vari dati
+    console.log(
+`nome = ${ourTeam[i].name},
+ruolo = ${ourTeam[i].role},
+foto = ${ourTeam[i].photo}`);
+
+}
