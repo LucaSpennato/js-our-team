@@ -62,10 +62,23 @@ const ourTeam = [
 
 for (let i = 0; i < ourTeam.length; i++) {
 
-    // stampiamo in console i vari dati
     console.log(
 `nome = ${ourTeam[i].name},
 ruolo = ${ourTeam[i].role},
 foto = ${ourTeam[i].photo}`);
 
 }
+
+
+// ! cosetta inutile 
+// for (let i = 0; i < ourTeam.length; i++) {
+
+    // volessimo per qualche motivo estrarre una ad una le informazioni, anche delle key
+    // bisogna chiamare in un for la i dell'array e semplicemente verranno estratti uno ad uno
+    // e successivamente visualizzare la singola key
+//     for (const key in ourTeam[i]){
+
+//         console.log(`${key} = ${ourTeam[i][key]}`)
+
+//     }
+// }
