@@ -79,9 +79,11 @@ foto = ${ourTeam[i].photo}`);
 
 const domElements = elementCreation('div');
 const teamPhotos = elementCreation('img');
+domElements.style.margin= '20px';
+teamPhotos.style.display = 'block';
 teamPhotos.setAttribute('src', './img/' + ourTeam[i].photo);
 
-domElements.innerText += `Nome: ${ourTeam[i].name} - Ruolo: ${ourTeam[i].role} - Foto: ${ourTeam[i].photo}`;
+domElements.innerText += `Nome: ${ourTeam[i].name} - Ruolo: ${ourTeam[i].role}`;
 
 wrapper.append(domElements);
 domElements.append(teamPhotos);
