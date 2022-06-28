@@ -83,6 +83,7 @@ domElements.append(teamPhotos);
 
 }
 
+
 function elementCreation(elementToCreate, classToAdd) {
     let element;
     element = document.createElement(elementToCreate);
