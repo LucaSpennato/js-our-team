@@ -61,38 +61,34 @@ const ourTeam = [
 
 const main = document.querySelector('main');
 
-const wrapper = elementCreation('div');
-wrapper.classList.add('wrapper');
+const wrapper = elementCreation('div', 'wrapper');
 
 main.append(wrapper);
-
-
 
 // Stampare su console le informazioni di nome, ruolo e la stringa della foto
 // creiamo un for, essendo tanti, non un for in
 for (let i = 0; i < ourTeam.length; i++) {
 
-    console.log(
-        `nome = ${ourTeam[i].name},
-ruolo = ${ourTeam[i].role},
-foto = ${ourTeam[i].photo}`);
+const domElements = elementCreation('div', 'card');
 
-const domElements = elementCreation('div');
-const teamPhotos = elementCreation('img');
-domElements.style.margin= '20px';
-teamPhotos.style.display = 'block';
+const teamPhotos = elementCreation('img', 'card-img-top');
+
 teamPhotos.setAttribute('src', './img/' + ourTeam[i].photo);
+teamPhotos.setAttribute('alt', ourTeam[i].photo);
 
-domElements.innerText += `Nome: ${ourTeam[i].name} - Ruolo: ${ourTeam[i].role}`;
+// domElements.innerText += `Nome: ${ourTeam[i].name} - Ruolo: ${ourTeam[i].role}`;
 
 wrapper.append(domElements);
 domElements.append(teamPhotos);
 
 }
 
+function elementCreation(elementToCreate, classToAdd) {
+    let element;
+    element = document.createElement(elementToCreate);
+    element.classList.add(classToAdd);
 
-function elementCreation(elementToCreate) {
-    return document.createElement(elementToCreate);
+    return element;
 }
 
 // ! cosetta inutile
